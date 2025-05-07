@@ -7,7 +7,7 @@ namespace Visitas.Aplicacion.Dto
     {
         public Resultado Resultado { get; set; }
         public string Mensaje { get; set; }
-        public Guid? Id { get; set; }
+        public int? Id { get; set; }
         public HttpStatusCode Status { get; set; }
     }
 }

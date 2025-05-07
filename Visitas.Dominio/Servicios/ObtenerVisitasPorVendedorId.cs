@@ -7,11 +7,11 @@ namespace Visitas.Dominio.Servicios
     {
         private readonly IVisitaRepositorio _visitaRepositorio = visitaRepositorio;
 
-        public async Task<List<Visita>> Ejecutar(int vendedorId)
+        public async Task<List<Visita>> Ejecutar(Guid vendedorId)
         {
-            if (vendedorId <= 0)
+            if (vendedorId == Guid.Empty)
             {
-                throw new ArgumentException("El ID del vendedor debe ser mayor que cero.");
+                throw new ArgumentException("El ID del vendedor no es un GUID válido.");
             }
 
             var visitas = await _visitaRepositorio.ObtenerVisitasPorVendedorId(vendedorId);
