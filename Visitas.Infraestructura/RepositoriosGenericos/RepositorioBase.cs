@@ -53,7 +53,7 @@ namespace Visitas.Infraestructura.RepositoriosGenericos
         {
             var _context = GetContext();
             var entitySet = _context.Set<T>();
-            var res = await entitySet.Where(v => EF.Property<DateTime>(v, "FechaVisita") == ValueDate).ToListAsync();
+            var res = await entitySet.Where(v => EF.Property<DateTime>(v, "FechaVisita").Date == ValueDate.Date).ToListAsync();
             await _context.DisposeAsync();
             return res;
         }

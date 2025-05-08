@@ -47,14 +47,19 @@
   {
     "ContainingType": "ServicioVisita.Controllers.VisitaController",
     "Method": "ModificarVisita",
-    "RelativePath": "api/Visita/ModificarVisita",
+    "RelativePath": "api/Visita/ModificarVisita/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "modificarVisitaIn",
-        "Type": "Visitas.Aplicacion.Dto.VisitaIn",
+        "Type": "Visitas.Aplicacion.Dto.VisitaModificarIn",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

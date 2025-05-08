@@ -19,7 +19,7 @@ namespace Visitas.Dominio.Entidades
         public string Motivo { get; set; }
 
         [Column("resultado")]
-        public string Resultado { get; set; }
+        public string? Resultado { get; set; }
 
         [Column("estado_visita")]
         public string Estado { get; set; }

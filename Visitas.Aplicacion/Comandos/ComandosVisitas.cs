@@ -43,11 +43,13 @@ namespace Visitas.Aplicacion.Comandos
             return baseOut;
         }
 
-        public async Task<BaseOut> ModificarVisita(VisitaIn visita)
+        public async Task<BaseOut> ModificarVisita(VisitaModificarIn visita, int id)
         {
             BaseOut baseOut = new();
             try
             {
+
+                visita.Id = id;
                 var visitaDominio = _mapper.Map<Visita>(visita);
                 await _modificarVisita.Ejecutar(visitaDominio);
                 baseOut.Mensaje = "Visita modificada exitosamente";

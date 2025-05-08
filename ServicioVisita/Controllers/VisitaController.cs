@@ -44,16 +44,16 @@ namespace ServicioVisita.Controllers
         }
 
         [HttpPut]
-        [Route("ModificarVisita")]
+        [Route("ModificarVisita/{id}")]
         [ProducesResponseType(typeof(VisitaOut), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 401)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 500)]
-        public async Task<IActionResult> ModificarVisita([FromBody] VisitaIn modificarVisitaIn)
+        public async Task<IActionResult> ModificarVisita([FromBody] VisitaModificarIn modificarVisitaIn, int id)
         {
             try
             {
-                var resultado = await _comandosVisitas.ModificarVisita(modificarVisitaIn);
+                var resultado = await _comandosVisitas.ModificarVisita(modificarVisitaIn, id);
                 if (resultado.Resultado != Visitas.Aplicacion.Enum.Resultado.Error)
                     return Ok(resultado);
                 else

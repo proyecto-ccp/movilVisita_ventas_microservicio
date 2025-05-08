@@ -63,16 +63,27 @@
         }
       }
     },
-    "/api/Visita/ModificarVisita": {
+    "/api/Visita/ModificarVisita/{id}": {
       "put": {
         "tags": [
           "Visita"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/VisitaIn"
+                "$ref": "#/components/schemas/VisitaModificarIn"
               }
             }
           }
@@ -477,6 +488,32 @@
       "VisitaIn": {
         "type": "object",
         "properties": {
+          "idCliente": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idVendedor": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fechaVisita": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "motivo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VisitaModificarIn": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "idCliente": {
             "type": "string",
             "format": "uuid"
