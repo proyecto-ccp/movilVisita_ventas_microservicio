@@ -142,7 +142,7 @@
   {
     "ContainingType": "ServicioVisita.Controllers.VisitaController",
     "Method": "ObtenerVisitasPorFecha",
-    "RelativePath": "api/Visita/ObtenerVisitasPorFecha/{fecha}",
+    "RelativePath": "api/Visita/ObtenerVisitasPorFecha/{fecha}/{vendedorId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -150,6 +150,11 @@
       {
         "Name": "fecha",
         "Type": "System.DateTime",
+        "IsRequired": true
+      },
+      {
+        "Name": "vendedorId",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],

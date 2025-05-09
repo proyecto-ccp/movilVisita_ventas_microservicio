@@ -7,7 +7,7 @@ namespace Visitas.Infraestructura.RepositoriosGenericos
         Task<T> Crear(T entidad);
         Task Actualizar(T entidad);
         Task<T> ObtenerPorId(object ValueKey);
-        Task<List<T>> ObtenerPorFecha(DateTime ValueDate);
+        Task<List<T>> ObtenerPorFecha(DateTime ValueDate, Guid vendedorId);
         Task<List<T>> ObtenerPorGuid(Guid ValueAttribute, string Attribute);
         Task<List<T>> ObtenerTodos();
     }

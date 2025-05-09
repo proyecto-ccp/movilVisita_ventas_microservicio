@@ -29,9 +29,9 @@ namespace Visitas.Infraestructura.Repositorios
             return await _repositorioBase.ObtenerPorId(id);
         }
 
-        public async Task<List<Visita>> ObtenerVisitasPorFecha(DateTime fecha)
+        public async Task<List<Visita>> ObtenerVisitasPorFecha(DateTime fecha, Guid vendedorId)
         {
-            return await _repositorioBase.ObtenerPorFecha(fecha);
+            return await _repositorioBase.ObtenerPorFecha(fecha, vendedorId);
         }
 
         public async Task<List<Visita>> ObtenerVisitasPorClienteId(Guid id)

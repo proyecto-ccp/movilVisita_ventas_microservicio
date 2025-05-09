@@ -7,14 +7,14 @@ namespace Visitas.Dominio.Servicios
     {
         private readonly IVisitaRepositorio _visitaRepositorio = visitaRepositorio;
 
-        public async Task<List<Visita>> Ejecutar(DateTime fecha)
+        public async Task<List<Visita>> Ejecutar(DateTime fecha, Guid vendedorId)
         {
             if (fecha == default)
             {
                 throw new ArgumentException("La fecha no puede ser nula o inválida.");
             }
 
-            var visitas = await _visitaRepositorio.ObtenerVisitasPorFecha(fecha);
+            var visitas = await _visitaRepositorio.ObtenerVisitasPorFecha(fecha, vendedorId);
             
             // Verifica si la fecha es antigua
             if (fecha < DateTime.Now)

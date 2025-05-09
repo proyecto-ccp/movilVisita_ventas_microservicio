@@ -9,6 +9,9 @@ namespace Visitas.Dominio.Entidades
         [Column("idcliente")]
         public Guid IdCliente { get; set; }
 
+        [NotMapped]
+        public Cliente Cliente { get; set; } = new Cliente();
+
         [Column("idvendedor")]
         public Guid IdVendedor { get; set; }
 

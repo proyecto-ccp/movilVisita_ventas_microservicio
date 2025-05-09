@@ -9,6 +9,6 @@ namespace Visitas.Dominio.Puertos.Repositorios
         Task<Visita> ObtenerVisitaPorId(int id);
         Task<List<Visita>> ObtenerVisitasPorVendedorId(Guid vendedorId);
         Task<List<Visita>> ObtenerVisitasPorClienteId(Guid clienteId);
-        Task<List<Visita>> ObtenerVisitasPorFecha(DateTime fecha);
+        Task<List<Visita>> ObtenerVisitasPorFecha(DateTime fecha, Guid vendedorId);
     }
 }

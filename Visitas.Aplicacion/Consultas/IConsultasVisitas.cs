@@ -7,6 +7,6 @@ namespace Visitas.Aplicacion.Consultas
     {
         Task<VisitaOut> ObtenerVisitaPorId(int id);
         Task<VisitaOutList> ObtenerVisitasPorVendedorId(Guid vendedorId);
-        Task<VisitaOutList> ObtenerVisitasPorFecha(DateTime fecha);
+        Task<VisitaOutList> ObtenerVisitasPorFecha(DateTime fecha, Guid vendedorId);
     }
 }

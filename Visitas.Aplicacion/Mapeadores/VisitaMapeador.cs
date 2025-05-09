@@ -14,6 +14,15 @@ namespace Visitas.Aplicacion.Mapeadores
                 .ForMember(dest => dest.Motivo, opt => opt.MapFrom(src => src.Motivo))
                 .ForMember(dest => dest.Resultado, opt => opt.MapFrom(src => src.Resultado))
                 .ForMember(dest => dest.Estado, opt => opt.MapFrom(src => src.Estado))
+                .ForPath(dest => dest.Cliente.Nombre, opt => opt.MapFrom(src => src.Cliente.Nombre))
+                .ForPath(dest => dest.Cliente.Apellido, opt => opt.MapFrom(src => src.Cliente.Apellido))
+                .ForPath(dest => dest.Cliente.TipoDocumento, opt => opt.MapFrom(src => src.Cliente.TipoDocumento))
+                .ForPath(dest => dest.Cliente.Documento, opt => opt.MapFrom(src => src.Cliente.Documento))
+                .ForPath(dest => dest.Cliente.Email, opt => opt.MapFrom(src => src.Cliente.Email))
+                .ForPath(dest => dest.Cliente.Telefono, opt => opt.MapFrom(src => src.Cliente.Telefono))
+                .ForPath(dest => dest.Cliente.Direccion, opt => opt.MapFrom(src => src.Cliente.Direccion))
+                .ForPath(dest => dest.Cliente.Ciudad, opt => opt.MapFrom(src => src.Cliente.Ciudad))
+                .ForPath(dest => dest.Cliente.Zona, opt => opt.MapFrom(src => src.Cliente.Zona))
                 .ReverseMap();
 
             CreateMap<Visita,VisitaIn>()

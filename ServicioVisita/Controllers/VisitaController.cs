@@ -110,16 +110,16 @@ namespace ServicioVisita.Controllers
         }
 
         [HttpGet]
-        [Route("ObtenerVisitasPorFecha/{fecha}")]
+        [Route("ObtenerVisitasPorFecha/{fecha}/{vendedorId}")]
         [ProducesResponseType(typeof(VisitaOutList), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 401)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 500)]
-        public async Task<IActionResult> ObtenerVisitasPorFecha(DateTime fecha)
+        public async Task<IActionResult> ObtenerVisitasPorFecha(DateTime fecha, Guid vendedorId)
         {
             try
             {
-                var resultado = await _consultasVisitas.ObtenerVisitasPorFecha(fecha);
+                var resultado = await _consultasVisitas.ObtenerVisitasPorFecha(fecha, vendedorId);
                 if (resultado.Resultado != Visitas.Aplicacion.Enum.Resultado.Error)
                     return Ok(resultado);
                 else

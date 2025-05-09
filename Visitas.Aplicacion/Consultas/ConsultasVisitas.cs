@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using System.Net;
+using Visitas.Aplicacion.Clientes;
 using Visitas.Aplicacion.Dto;
 using Visitas.Aplicacion.Enum;
+using Visitas.Dominio.Entidades;
 using Visitas.Dominio.Servicios;
 
 namespace Visitas.Aplicacion.Consultas
@@ -12,13 +14,37 @@ namespace Visitas.Aplicacion.Consultas
         private readonly ObtenerVisitasPorVendedorId _obtenerVisitasPorVendedorId;
         private readonly ObtenerVisitasPorFecha _obtenerVisitasPorFecha;
         private readonly IMapper _mapper;
+        private readonly IClientesApiClient _clientesApiClient;
 
-        public ConsultasVisitas(ObtenerVisitaPorId obtenerVisitaPorId, ObtenerVisitasPorVendedorId obtenerVisitasPorVendedorId, ObtenerVisitasPorFecha obtenerVisitasPorFecha, IMapper mapper)
+        public ConsultasVisitas(ObtenerVisitaPorId obtenerVisitaPorId, ObtenerVisitasPorVendedorId obtenerVisitasPorVendedorId, ObtenerVisitasPorFecha obtenerVisitasPorFecha, IMapper mapper, IClientesApiClient clientesApiClient)
         {
             _obtenerVisitaPorId = obtenerVisitaPorId;
             _obtenerVisitasPorVendedorId = obtenerVisitasPorVendedorId;
             _obtenerVisitasPorFecha = obtenerVisitasPorFecha;
             _mapper = mapper;
+            _clientesApiClient = clientesApiClient;
+        }
+
+        private void DiligenciarCliente(Visita visita)
+        {
+            if (visita.IdCliente != Guid.Empty)
+            {
+                var cliente = _clientesApiClient.ObtenerClientePorIdAsync(visita.IdCliente).Result;
+                if (cliente != null)
+                {
+                    visita.Cliente = new Cliente();
+                    visita.Cliente.Nombre = cliente.Nombre;
+                    visita.Cliente.Apellido = cliente.Apellido;
+                    visita.Cliente.TipoDocumento = cliente.TipoDocumento;
+                    visita.Cliente.Documento = cliente.Documento;
+                    visita.Cliente.Email = cliente.Email;
+                    visita.Cliente.Telefono = cliente.Telefono;
+                    visita.Cliente.Direccion = cliente.Direccion;
+                    visita.Cliente.Ciudad = cliente.Ciudad;
+                    visita.Cliente.Zona = cliente.Zona;
+                }
+                
+            }
         }
 
         public async Task<VisitaOut> ObtenerVisitaPorId(int id)
@@ -36,6 +62,7 @@ namespace Visitas.Aplicacion.Consultas
                 }
                 else
                 {
+                    DiligenciarCliente(Visita);
                     VisitaOut.Resultado = Resultado.Exitoso;
                     VisitaOut.Mensaje = "Visita encontrada";
                     VisitaOut.Status = HttpStatusCode.OK;
@@ -71,6 +98,11 @@ namespace Visitas.Aplicacion.Consultas
                 }
                 else
                 {
+                    foreach (var visita in Visitas)
+                    {
+                        DiligenciarCliente(visita);
+                    }
+
                     VisitaOutList.Resultado = Resultado.Exitoso;
                     VisitaOutList.Mensaje = "Visitas encontradas";
                     VisitaOutList.Status = HttpStatusCode.OK;
@@ -86,7 +118,7 @@ namespace Visitas.Aplicacion.Consultas
             return VisitaOutList;
         }
 
-    public async Task<VisitaOutList> ObtenerVisitasPorFecha(DateTime fecha)
+    public async Task<VisitaOutList> ObtenerVisitasPorFecha(DateTime fecha, Guid vendedorId)
         {
             VisitaOutList VisitaOutList = new()
             {
@@ -95,7 +127,7 @@ namespace Visitas.Aplicacion.Consultas
 
             try
             {
-                var Visitas = await _obtenerVisitasPorFecha.Ejecutar(fecha);
+                var Visitas = await _obtenerVisitasPorFecha.Ejecutar(fecha, vendedorId);
                 if (Visitas == null || !Visitas.Any())
                 {
                     VisitaOutList.Resultado = Resultado.SinRegistros;
@@ -104,6 +136,11 @@ namespace Visitas.Aplicacion.Consultas
                 }
                 else
                 {
+                    foreach (var visita in Visitas)
+                    {
+                        DiligenciarCliente(visita);
+                    }
+
                     VisitaOutList.Resultado = Resultado.Exitoso;
                     VisitaOutList.Mensaje = "Visitas encontradas";
                     VisitaOutList.Status = HttpStatusCode.OK;

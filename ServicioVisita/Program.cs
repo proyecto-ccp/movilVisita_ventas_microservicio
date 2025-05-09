@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Visitas.Aplicacion.Clientes;
 using Visitas.Aplicacion.Comandos;
 using Visitas.Aplicacion.Consultas;
 using Visitas.Dominio.Puertos.Repositorios;
@@ -27,6 +28,11 @@ builder.Services.AddScoped<ActualizarVisita>();
 builder.Services.AddScoped<ObtenerVisitaPorId>();
 builder.Services.AddScoped<ObtenerVisitasPorFecha>();
 builder.Services.AddScoped<ObtenerVisitasPorVendedorId>();
+
+builder.Services.AddHttpClient<IClientesApiClient, ClientesApiClient>(client =>
+{
+    client.BaseAddress = new Uri("https://servicio-cliente-596275467600.us-central1.run.app/");
+});
 
 var app = builder.Build();
 

@@ -1,9 +1,12 @@
-﻿namespace Visitas.Aplicacion.Dto
+﻿using Visitas.Dominio.Entidades;
+
+namespace Visitas.Aplicacion.Dto
 {
     public class VisitaDto
     {
         public Guid IdCliente { get; set; }
         public Guid IdVendedor { get; set; }
+        public Cliente Cliente { get; set; }
         public DateTime FechaVisita { get; set; }
         public string Motivo { get; set; }
         public string? Resultado { get; set; }

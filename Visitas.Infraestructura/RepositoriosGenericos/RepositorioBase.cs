@@ -49,11 +49,12 @@ namespace Visitas.Infraestructura.RepositoriosGenericos
             return res;
         }
 
-        public async Task<List<T>> ObtenerPorFecha(DateTime ValueDate)
+        public async Task<List<T>> ObtenerPorFecha(DateTime ValueDate, Guid vendedorId)
         {
             var _context = GetContext();
             var entitySet = _context.Set<T>();
-            var res = await entitySet.Where(v => EF.Property<DateTime>(v, "FechaVisita").Date == ValueDate.Date).ToListAsync();
+            var res = await entitySet.Where(v => EF.Property<DateTime>(v, "FechaVisita").Date == ValueDate.Date
+                                            && EF.Property<Guid>(v, "IdVendedor") == vendedorId).ToListAsync();
             await _context.DisposeAsync();
             return res;
         }
