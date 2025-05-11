@@ -4,6 +4,7 @@ namespace Visitas.Aplicacion.Dto
 {
     public class VisitaDto
     {
+        public int Id { get; set; }
         public Guid IdCliente { get; set; }
         public Guid IdVendedor { get; set; }
         public Cliente Cliente { get; set; }

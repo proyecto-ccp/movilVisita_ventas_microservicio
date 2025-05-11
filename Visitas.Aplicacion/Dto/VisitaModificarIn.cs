@@ -2,7 +2,6 @@
 {
     public class VisitaModificarIn
     {
-        public int Id { get; set; }
         public Guid IdCliente { get; set; }
         public Guid IdVendedor { get; set; }
         public DateTime FechaVisita { get; set; }

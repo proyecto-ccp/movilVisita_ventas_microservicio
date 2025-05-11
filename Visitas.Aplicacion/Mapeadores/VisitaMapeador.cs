@@ -8,6 +8,7 @@ namespace Visitas.Aplicacion.Mapeadores
     {
         public VisitaMapeador() {
             CreateMap<Visita, VisitaDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.IdCliente, opt => opt.MapFrom(src => src.IdCliente))
                 .ForMember(dest => dest.IdVendedor, opt => opt.MapFrom(src => src.IdVendedor))
                 .ForMember(dest => dest.FechaVisita, opt => opt.MapFrom(src => src.FechaVisita))
@@ -41,7 +42,6 @@ namespace Visitas.Aplicacion.Mapeadores
 
             //Modificar
             CreateMap<Visita, VisitaModificarIn>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.IdCliente, opt => opt.MapFrom(src => src.IdCliente))
                 .ForMember(dest => dest.IdVendedor, opt => opt.MapFrom(src => src.IdVendedor))
                 .ForMember(dest => dest.FechaVisita, opt => opt.MapFrom(src => src.FechaVisita))

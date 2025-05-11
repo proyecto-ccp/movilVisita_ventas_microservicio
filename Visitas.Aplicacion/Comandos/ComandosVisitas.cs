@@ -48,9 +48,8 @@ namespace Visitas.Aplicacion.Comandos
             BaseOut baseOut = new();
             try
             {
-
-                visita.Id = id;
                 var visitaDominio = _mapper.Map<Visita>(visita);
+                visitaDominio.Id = id;
                 await _modificarVisita.Ejecutar(visitaDominio);
                 baseOut.Mensaje = "Visita modificada exitosamente";
                 baseOut.Id = visitaDominio.Id;
