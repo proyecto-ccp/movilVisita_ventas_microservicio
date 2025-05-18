@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioVisita", "ServicioVisita.csproj", "{28E2A23A-1323-4B84-8D8C-59BA16208CD5}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visitas.Dominio", "..\Visitas.Dominio\Visitas.Dominio.csproj", "{68F8AFA2-37C8-44E3-A84B-A47AA172363C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visitas.Infraestructura", "..\Visitas.Infraestructura\Visitas.Infraestructura.csproj", "{89C876CD-B41F-4D8E-93A3-2C6CD23E745A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visitas.Test", "..\Visitas.Test\Visitas.Test.csproj", "{C0F336BA-52B5-4AB7-B54B-353037BDBB77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{89C876CD-B41F-4D8E-93A3-2C6CD23E745A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89C876CD-B41F-4D8E-93A3-2C6CD23E745A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89C876CD-B41F-4D8E-93A3-2C6CD23E745A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F336BA-52B5-4AB7-B54B-353037BDBB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F336BA-52B5-4AB7-B54B-353037BDBB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F336BA-52B5-4AB7-B54B-353037BDBB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F336BA-52B5-4AB7-B54B-353037BDBB77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

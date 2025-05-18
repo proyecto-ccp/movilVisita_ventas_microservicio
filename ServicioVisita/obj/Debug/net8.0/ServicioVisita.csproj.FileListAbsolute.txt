@@ -49,10 +49,10 @@ D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservic
 D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ServicioVisita.props
 D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ServicioVisita.props
 D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\staticwebassets.pack.json
-D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\Servicio.5DD8F9DC.Up2Date
 D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\ServicioVisita.dll
 D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\refint\ServicioVisita.dll
 D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\ServicioVisita.pdb
 D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\ServicioVisita.genruntimeconfig.cache
 D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\ref\ServicioVisita.dll
+D:\Edward Romero\Documents\MISO\Proyecto Final II\movilVisita_ventas_microservicio\ServicioVisita\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

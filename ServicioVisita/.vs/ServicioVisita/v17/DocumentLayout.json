@@ -1,7 +1,14 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Edward Romero\\Documents\\MISO\\Proyecto Final II\\movilVisita_ventas_microservicio\\ServicioVisita\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C0F336BA-52B5-4AB7-B54B-353037BDBB77}|..\\Visitas.Test\\Visitas.Test.csproj|d:\\edward romero\\documents\\miso\\proyecto final ii\\movilvisita_ventas_microservicio\\visitas.test\\visitacontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707D9520-A44C-48A9-9C80-2609D3616822}|..\\Visitas.Aplicacion\\Visitas.Aplicacion.csproj|d:\\edward romero\\documents\\miso\\proyecto final ii\\movilvisita_ventas_microservicio\\visitas.aplicacion\\consultas\\consultasvisitas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +16,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e3fb24c2-2e84-3146-a5f8-bc25bbc68f8a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConsultasVisitas.cs",
+              "DocumentMoniker": "D:\\Edward Romero\\Documents\\MISO\\Proyecto Final II\\movilVisita_ventas_microservicio\\Visitas.Aplicacion\\Consultas\\ConsultasVisitas.cs",
+              "RelativeDocumentMoniker": "..\\Visitas.Aplicacion\\Consultas\\ConsultasVisitas.cs",
+              "ToolTip": "D:\\Edward Romero\\Documents\\MISO\\Proyecto Final II\\movilVisita_ventas_microservicio\\Visitas.Aplicacion\\Consultas\\ConsultasVisitas.cs",
+              "RelativeToolTip": "..\\Visitas.Aplicacion\\Consultas\\ConsultasVisitas.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAIwHgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T16:19:25.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VisitaControllerTest.cs",
+              "DocumentMoniker": "D:\\Edward Romero\\Documents\\MISO\\Proyecto Final II\\movilVisita_ventas_microservicio\\Visitas.Test\\VisitaControllerTest.cs",
+              "RelativeDocumentMoniker": "..\\Visitas.Test\\VisitaControllerTest.cs",
+              "ToolTip": "D:\\Edward Romero\\Documents\\MISO\\Proyecto Final II\\movilVisita_ventas_microservicio\\Visitas.Test\\VisitaControllerTest.cs",
+              "RelativeToolTip": "..\\Visitas.Test\\VisitaControllerTest.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAiwFEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T16:16:25.003Z",
+              "EditorCaption": ""
             }
           ]
         }
